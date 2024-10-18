@@ -41,6 +41,9 @@ El proyecto nos proporcionó un muy buen aprendizaje en la implementación y dis
 
 ## Referencias
 https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#3-install-your-image
+
 https://www.youtube.com/watch?v=Hjbc7GEKg5s&t=117s
+
 https://www.youtube.com/watch?v=e6-TaH5bkjo&t=451s
+
 https://www.cisco.com/c/es_mx/support/docs/ip/dynamic-address-allocation-resolution/22920-dhcp-ser.html#configs
