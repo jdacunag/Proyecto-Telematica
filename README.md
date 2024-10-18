@@ -29,6 +29,7 @@ Aspectos Logrados:
 Desarrollamos el servidor DHCP en C, que puede asignar direcciones IP dinámicamente a los clientes, puede manejar múltiples solicitudes simultáneamente por medio de sockets e hilos (librería <pthread.h>). Además, maneja todo el proceso del protocolo DHCP, los cuales son: DHCPDISCOVER, DHCPOFFER, DHCPREQUEST y DHCPACK, y envía todos los parámetros necesarios para la configuración de red (además de la dirección IP) como máscara de subred, un default gateaway y un servidor DNS. Maneja muy bien la duración de concesión (lease time) de las IPs asignadas, incluyendo la renovación y liberación de IPs cuando se necesite. Se logró implementar el servidor y el cliente en una instancia de AWS.
 
 Aspectos no logrados:
+No se ha logrado ejecutar el proyecto en una máquina virtual.
 
 ## Conclusiones
 El proyecto nos proporcionó un muy buen aprendizaje en la implementación y diseño de aplicaciones de red, en este caso del protocolo DHCP, en donde se implementó la asignación dinámica de direcciones IP, la renovación de las concesiones y la liberación de direcciones. Además se usó la API Berkeley de sockets para la comunicación entre el servidor y el cliente, se uso también hilos (pthreads) para el manejo de las solicitudes simultáneamente. Se realizó el manejo del flujo de mensajes del protocolo de DHCP y se implementó los demás parámetros necesarios para la configuración de redes. Finalmente, se desplegó el servidor y el cliente en AWS para ejecutar el proyecto en la nube.
