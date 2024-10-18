@@ -49,3 +49,5 @@ https://www.youtube.com/watch?v=Hjbc7GEKg5s&t=117s
 https://www.youtube.com/watch?v=e6-TaH5bkjo&t=451s
 
 https://www.cisco.com/c/es_mx/support/docs/ip/dynamic-address-allocation-resolution/22920-dhcp-ser.html#configs
+
+(DigramaUML-ProyectoTelematica.png)
