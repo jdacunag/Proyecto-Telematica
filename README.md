@@ -9,8 +9,11 @@ El objetivo de este proyecto es desarrollar un servidor DHCP en C, que pueda man
 El servidor DHCP se desarrolló en C, donde el servidor se encarga de recibir solicitudes de los clientes para asignarles direcciones IP de manera automática. Adicionalmente, también proporciona parámetros esenciales como máscara de subred, gateaway, servidor DNS y la duración de la conexión (lease). El servidor maneja varias solicitudes simultáneamente y gestiona la renovación y liberación de las direcciones IP asignadas.
 ### Proceso DHCP:
 **1. DHCPDISCOVER:** Cuando se conecta el cliente a la red, envía una solicitud para obtener una dirección IP de un servidor DHCP disponible.
-**2. DHCPOFFER:** El servidor DHCP recibe la solicitud del cliente y envía la dirección IP y otros parámetros de configuración mencionados anteriormente.
+
+**2. DHCPOFFER:** El servidor DHCP recibe la solicitud del cliente y envía la dirección IP y otros parámetros de configuración mencionados anteriormente
+
 **3. DCHPREQUEST:** El cliente envía un mensaje para confirmar la dirección IP recibida.
+
 **4. DHCPACK:** El servidor confirmar la asignación de la IP enviando un mensaje de DCHPACK (Acknowledgement), lo que le confirma al cliente que puede comenzar a usar la dirección IP asignada y demás parámetros de red.
 
 ### Cliente DHCP:
