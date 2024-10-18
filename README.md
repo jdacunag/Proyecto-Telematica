@@ -2,7 +2,8 @@
 ## Introducción
 El protocolo de Configuración Dinámica de Host (DHCP, por sus siglas en inglés), es un protocolo de red que permite a los dispositivos en una red obtener automáticamente una dirección IP y otros parámetros necesarios para su funcionamiento en la red. Es un protocolo basado en el modelo cliente-servidor, donde un servidor DHCP asigna dinámicamente las direcciones IP y demás parámetros de red a los clientes DHCP.
 
-El objetivo de este proyecto es desarrollar un servidor DHCP en C, que pueda manejar las solicitudes de los clientes (también en C) que se conecten a la red, que solicite una dirección IP al servidor y que la pueda recibir correctamente. Para desarrollar el proyecto hicimos uso de la API Berkeley de sockets con la finalidad de que el servidor tenga una buena conexión y comunicación con el cliente. El servidor entrega varios parámetros al cliente, como una dirección IPv4, una máscara de subred, un default Gateaway, un DNS Server y un dominio.
+El objetivo de este proyecto es desarrollar un servidor DHCP en C, que pueda manejar las solicitudes de los clientes (también en C) que se conecten a la red, que solicite una dirección IP al servidor y que la pueda recibir correctamente. Para desarrollar el proyecto hicimos uso de la API Berkeley de sockets con la finalidad de que el servidor tenga una buena conexión y comunicación con el cliente. El servidor entrega varios parámetros al cliente, como una dirección IPv4, una máscara de subred, un default Gateaway, un DNS Server y duración de concesión (lease time).
+
 ## Desarrollo
 Servidor DHCP:
 El servidor DHCP se desarrolló en C, donde el servidor se encarga de recibir solicitudes de los clientes para asignarles direcciones IP de manera automática. Adicionalmente, también proporciona parámetros esenciales como máscara de subred, gateaway, servidor DNS y la duración de la conexión (lease). El servidor maneja varias solicitudes simultáneamente y gestiona la renovación y liberación de las direcciones IP asignadas.
@@ -24,6 +25,11 @@ Paquetes y librerías utilizadas:
 3. Gestión de asignación y liberación de IPs: El servidor usa un pool de direcciones IP que se asginan dinámicamente a los clientes cuando lo solicitan. Para cada dirección IP asignada, el servidor lleva un registro del tiempo de concesión y el estado de la dirección. Las funciones de asignación verifican el pool para identificar las direcciones disponibles, mientras que las funciones de liberación restauran las direcciones IP al pool para que otros clientes puedan utilizarlas.
 
 ## Aspectos Logrados y No Logrados
+Aspectos Logrados:
+Desarrollamos el servidor DHCP en C, que puede asignar direcciones IP dinámicamente a los clientes, puede manejar múltiples solicitudes simultáneamente por medio de sockets y la librería <pthread.h>. Además, maneja todo el proceso del protocolo DHCP, los cuales son: DHCPDISCOVER, DHCPOFFER, DHCPREQUEST y DHCPACK, y envía todos los parámetros necesarios para la configuración de red (además de la dirección IP) como máscara de subred, un default gateaway y un servidor DNS. Maneja muy bien la duración de concesión (lease time) de las IPs asignadas, incluyendo la renovación y liberación de IPs cuando se necesite. Se logró implementar el servidor y el cliente en una instancia de AWS.
+
+Aspectos no logrados:
+
 ## Conclusiones 
 ## Referencias
 
