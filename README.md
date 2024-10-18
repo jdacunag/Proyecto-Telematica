@@ -37,9 +37,12 @@ Desarrollamos el servidor DHCP en C, que puede asignar direcciones IP dinámicam
 No se ha logrado ejecutar el proyecto en una máquina virtual.
 
 ## Conclusiones
-El proyecto nos proporcionó un muy buen aprendizaje en la implementación y diseño de aplicaciones de red, en este caso del protocolo DHCP, en donde se implementó la asignación dinámica de direcciones IP, la renovación de las concesiones y la liberación de direcciones. 
-
-Además se usó la API Berkeley de sockets para la comunicación entre el servidor y el cliente, se uso también hilos (pthreads) para el manejo de las solicitudes simultáneamente. Se realizó el manejo del flujo de mensajes del protocolo de DHCP y se implementó los demás parámetros necesarios para la configuración de redes. Finalmente, se desplegó el servidor y el cliente en AWS para ejecutar el proyecto en la nube.
+- El proyecto nos proporcionó un muy buen aprendizaje en la implementación y diseño de aplicaciones de red, en este caso del protocolo DHCP, en donde se implementó la asignación dinámica de direcciones IP, la renovación de las concesiones y la liberación de direcciones. 
+- Además se usó la API Berkeley de sockets para la comunicación entre el servidor y el cliente.
+- Se uso también hilos (pthreads) para el manejo de las solicitudes simultáneamente.
+- Se realizó el manejo del flujo de mensajes del protocolo de DHCP.
+- Se implementó los demás parámetros necesarios para la configuración de redes.
+- Finalmente, se desplegó el servidor y el cliente en AWS para ejecutar el proyecto en la nube.
 
 ## Referencias
 https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#3-install-your-image
