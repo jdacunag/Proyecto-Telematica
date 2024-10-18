@@ -20,12 +20,14 @@ El servidor DHCP se desarrolló en C, donde el servidor se encarga de recibir so
 El cliente se desarrolló en C igualmente, este envía una solicitud al servidor para obtener una dirección IP que le permita conectarse a la red. Cuando el servidor se conecta a la vez, este muestra la información que le fue proporcionada por el servidor.
 
 ### Paquetes y librerías utilizadas:
-1. API Berkeley (Sockets): Los sockets proporcionan la base para la comunicación entre el cliente y el servidor en la red. En el servidor, se utiliza unas direcciones AF_INET para IPv4 y el tipo de socket SOCK_DGRAM para la transmisión de paquetes usando el protocolo de transporte UDP (User Datagram Protocol). En el cliente, se establece un socket que envía y recibe mensajes para solicitar y recibir direcciones IP.
-2. Librerías en C:
+**1. API Berkeley (Sockets):** Los sockets proporcionan la base para la comunicación entre el cliente y el servidor en la red. En el servidor, se utiliza unas direcciones AF_INET para IPv4 y el tipo de socket SOCK_DGRAM para la transmisión de paquetes usando el protocolo de transporte UDP (User Datagram Protocol). En el cliente, se establece un socket que envía y recibe mensajes para solicitar y recibir direcciones IP.
+   
+**2. Librerías en C:**
    - <arpa/inet.h>: Proporciona funciones para manipular direcciones IP, como inet_ntoa() y inet_pton(), que son necesarias para asignar y validar direcciones.
    - <pthread.h>: Permite el uso de hilos para manejar múltiples solicitudes de clientes simultáneamente.
    - <time.h>: Se utiliza para gestionar el tiempo de concesión (lease time) de las direcciones IP, lo cual facilita la renovación y expiración de las concesiones.
-3. Gestión de asignación y liberación de IPs: El servidor usa un pool de direcciones IP que se asginan dinámicamente a los clientes cuando lo solicitan. Para cada dirección IP asignada, el servidor lleva un registro del tiempo de concesión y el estado de la dirección. Las funciones de asignación verifican el pool para identificar las direcciones disponibles, mientras que las funciones de liberación restauran las direcciones IP al pool para que otros clientes puedan utilizarlas.
+     
+**3. Gestión de asignación y liberación de IPs:** El servidor usa un pool de direcciones IP que se asginan dinámicamente a los clientes cuando lo solicitan. Para cada dirección IP asignada, el servidor lleva un registro del tiempo de concesión y el estado de la dirección. Las funciones de asignación verifican el pool para identificar las direcciones disponibles, mientras que las funciones de liberación restauran las direcciones IP al pool para que otros clientes puedan utilizarlas.
 
 ## Aspectos Logrados y No Logrados
 ### Aspectos Logrados:
