@@ -1,4 +1,6 @@
 # Proyecto 01 Telemática: Implementación de Protocolo DHCP, Servidor y Cliente
+Hecho por: Verónica Zapata, Juan Diego Acuña y Marcela Londoño
+
 ## **Video del proyecto**
 https://youtu.be/4qUBhcGDrUk
 
