@@ -41,7 +41,7 @@ Además, maneja todo el proceso del protocolo DHCP, los cuales son: DHCPDISCOVER
 Maneja muy bien la duración de concesión (lease time) de las IPs asignadas, incluyendo la renovación y liberación de IPs cuando se necesite. Se logró implementar el servidor y el cliente en una instancia de AWS.
 
 ### Aspectos no logrados:
-No se ha logrado ejecutar el proyecto en una máquina virtual.
+Se probó el proyecto a través de Docker, no obstante, no se logró la conexión entre el cliente y el servidor ya que daba un error de refuse. Implementamos un relay para el manejo de subredes, sin embargo, funciona de manera parcial.
 
 ## Conclusiones
 - El proyecto nos proporcionó un muy buen aprendizaje en la implementación y diseño de aplicaciones de red, en este caso del protocolo DHCP, en donde se implementó la asignación dinámica de direcciones IP, la renovación de las concesiones y la liberación de direcciones. 
