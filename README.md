@@ -29,6 +29,9 @@ El cliente se desarrolló en C igualmente, este envía una solicitud al servidor
      
 **3. Gestión de asignación y liberación de IPs:** El servidor usa un pool de direcciones IP que se asginan dinámicamente a los clientes cuando lo solicitan. Para cada dirección IP asignada, el servidor lleva un registro del tiempo de concesión y el estado de la dirección. Las funciones de asignación verifican el pool para identificar las direcciones disponibles, mientras que las funciones de liberación restauran las direcciones IP al pool para que otros clientes puedan utilizarlas.
 
+## Diagrama UML
+![Diagrama UML del Proyecto](DigramaUML-ProyectoTelematica.png)
+
 ## Aspectos Logrados y No Logrados
 ### Aspectos Logrados:
 Desarrollamos el servidor DHCP en C, que puede asignar direcciones IP dinámicamente a los clientes, puede manejar múltiples solicitudes simultáneamente por medio de sockets e hilos (librería <pthread.h>). Además, maneja todo el proceso del protocolo DHCP, los cuales son: DHCPDISCOVER, DHCPOFFER, DHCPREQUEST y DHCPACK, y envía todos los parámetros necesarios para la configuración de red (además de la dirección IP) como máscara de subred, un default gateaway y un servidor DNS. Maneja muy bien la duración de concesión (lease time) de las IPs asignadas, incluyendo la renovación y liberación de IPs cuando se necesite. Se logró implementar el servidor y el cliente en una instancia de AWS.
@@ -53,4 +56,3 @@ https://www.youtube.com/watch?v=e6-TaH5bkjo&t=451s
 
 https://www.cisco.com/c/es_mx/support/docs/ip/dynamic-address-allocation-resolution/22920-dhcp-ser.html#configs
 
-![Diagrama UML del Proyecto](DigramaUML-ProyectoTelematica.png)
