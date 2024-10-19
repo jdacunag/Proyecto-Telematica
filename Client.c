@@ -7,7 +7,7 @@
 
 #define SERVER_PORT 67
 #define BUFFER_SIZE 1024
-#define RENEWAL_INTERVAL 30  // Intervalo de 30 segundos para renovaciones
+#define RENEWAL_INTERVAL 30 
 
 void send_dhcp_discover(int sock) {
     const char *dhcp_discover = "DHCPDISCOVER";
@@ -29,19 +29,18 @@ int receive_dhcp_offer(int sock, int *lease_time) {
     if (len > 0) {
         printf("Información recibida del servidor:\n%s", buffer);
         
-        // Extraer el tiempo de concesión de la respuesta
         sscanf(buffer, "IP:%*s\nMASK:%*s\nGATEWAY:%*s\nDNS:%*s\nLEASE:%d\n", lease_time);
-        return 1;  // Indica que se recibió correctamente la oferta
+        return 1;  
     } else {
         perror("Error al recibir el DHCPOFFER");
-        return 0;  // Indica error
+        return 0; 
     }
 }
 
 int main() {
     int sock;
     struct sockaddr_in server_addr;
-    int lease_time = 0;  // Tiempo de concesión
+    int lease_time = 0; 
     time_t lease_expiry;
 
     sock = socket(AF_INET, SOCK_STREAM, 0);
@@ -61,17 +60,16 @@ int main() {
 
     send_dhcp_discover(sock);
     if (receive_dhcp_offer(sock, &lease_time)) {
-        lease_expiry = time(NULL) + lease_time;  // Calcular el tiempo de expiración
+        lease_expiry = time(NULL) + lease_time;  
 
-        // Ciclo de renovación
+        
         while (1) {
             sleep(RENEWAL_INTERVAL);
             send_dhcp_request(sock);
             
-            // Verificar si el tiempo de concesión ha expirado
             if (time(NULL) >= lease_expiry) {
                 printf("El tiempo de concesión ha expirado. Saliendo...\n");
-                break;  // Salir del bucle si el tiempo de concesión ha expirado
+                break;  
             }
         }
     }
