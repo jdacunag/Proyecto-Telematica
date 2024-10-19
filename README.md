@@ -34,7 +34,11 @@ El cliente se desarrolló en C igualmente, este envía una solicitud al servidor
 
 ## Aspectos Logrados y No Logrados
 ### Aspectos Logrados:
-Desarrollamos el servidor DHCP en C, que puede asignar direcciones IP dinámicamente a los clientes, puede manejar múltiples solicitudes simultáneamente por medio de sockets e hilos (librería <pthread.h>). Además, maneja todo el proceso del protocolo DHCP, los cuales son: DHCPDISCOVER, DHCPOFFER, DHCPREQUEST y DHCPACK, y envía todos los parámetros necesarios para la configuración de red (además de la dirección IP) como máscara de subred, un default gateaway y un servidor DNS. Maneja muy bien la duración de concesión (lease time) de las IPs asignadas, incluyendo la renovación y liberación de IPs cuando se necesite. Se logró implementar el servidor y el cliente en una instancia de AWS.
+Desarrollamos el servidor DHCP en C, que puede asignar direcciones IP dinámicamente a los clientes, puede manejar múltiples solicitudes simultáneamente por medio de sockets e hilos (librería <pthread.h>). 
+
+Además, maneja todo el proceso del protocolo DHCP, los cuales son: DHCPDISCOVER, DHCPOFFER, DHCPREQUEST y DHCPACK, y envía todos los parámetros necesarios para la configuración de red (además de la dirección IP) como máscara de subred, un default gateaway y un servidor DNS. 
+
+Maneja muy bien la duración de concesión (lease time) de las IPs asignadas, incluyendo la renovación y liberación de IPs cuando se necesite. Se logró implementar el servidor y el cliente en una instancia de AWS.
 
 ### Aspectos no logrados:
 No se ha logrado ejecutar el proyecto en una máquina virtual.
