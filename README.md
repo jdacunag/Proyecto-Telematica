@@ -1,4 +1,7 @@
 # Proyecto 01 Telemática: Implementación de Protocolo DHCP, Servidor y Cliente
+##**Video del proyecto**
+https://youtu.be/4qUBhcGDrUk
+
 ## Introducción
 El protocolo de Configuración Dinámica de Host (DHCP, por sus siglas en inglés), es un protocolo de red que permite a los dispositivos en una red obtener automáticamente una dirección IP y otros parámetros necesarios para su funcionamiento en la red. Es un protocolo basado en el modelo cliente-servidor, donde un servidor DHCP asigna dinámicamente las direcciones IP y demás parámetros de red a los clientes DHCP.
 
