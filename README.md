@@ -1,5 +1,5 @@
 # Proyecto 01 Telemática: Implementación de Protocolo DHCP, Servidor y Cliente
-##**Video del proyecto**
+## **Video del proyecto**
 https://youtu.be/4qUBhcGDrUk
 
 ## Introducción
